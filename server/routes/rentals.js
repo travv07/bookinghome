@@ -26,6 +26,7 @@ router.get("", function(req, res) {
 });
 
 router.post("", Auth.authMiddleware, function(req, res) {
+  console.log(req.body);
   const { title, city, street, category, image, bedrooms, description, dailyRate } = req.body;
 
   const rental = new Rental({title, city, street, category, image, bedrooms, description, dailyRate});
